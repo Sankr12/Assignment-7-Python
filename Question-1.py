@@ -3,29 +3,11 @@
 month = int(input("Enter the month number: "))
 
 match month:
-    case 1:
+    case x if x == 2:
+        print("28 or 29 Days")
+    case x if 1 <= x <= 12 and (x in {1, 3, 5, 7, 8, 10, 12}):
         print("31 Days")
-    case 3:
-        print("31 Days")
-    case 5:
-        print("31 Days")
-    case 7:
-        print("31 Days")
-    case 8:
-        print("31 Days")
-    case 10:
-        print("31 Days")
-    case 10:
-        print("31 Days")
-    case 2:
-        print("30 Days")
-    case 4:
-        print("30 Days")
-    case 6:
-        print("30 Days")
-    case 9:
-        print("30 Days")
-    case 11:
+    case x if 1 <= x <= 12 and (x in {4, 6, 9, 11}):
         print("30 Days")
     case _:
-        print("Invalid Input")
+        print("Invalid month")

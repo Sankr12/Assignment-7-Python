@@ -3,23 +3,19 @@ comes before the second in dictionary order or first string comes after the seco
 string in dictionary order using match case statement '''
 
 print()
-string1  = input("Enter first string: ")
+print()
+string1 = input("Enter first string: ")
 string2 = input("Enter second string: ")
 
-if(string1<string2):
-    case = 1
-elif(string1>string2):
-    case = 2
-else:
-    case = 3
+# Convert strings to lowercase for case-insensitive comparison
+string1_lower = string1.lower()
+string2_lower = string2.lower()
 
-match case:
-    case 1:
-        print("First String comes first")
-    case 2:
+match (string1_lower < string2_lower, string1_lower > string2_lower):
+    case (True, _):
+        print("First string comes first")
+    case (_, True):
         print("Second string comes first")
-    case 3:
-        print("Strings are identical")
     case _:
-        print("Invalid input")
+        print("Strings are identical")
 print()

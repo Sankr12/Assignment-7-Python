@@ -13,38 +13,25 @@ g. All other colours - Sunday
 '''
 
 print()
-print("What's your favourite colour ?")
-colour = input("Ans. ")
+print("What's your favourite colour?")
+user_input = input("Ans. ").lower()
 
-if("yellow" in colour):
-    case = 1
-elif("blue" in colour):
-    case = 2
-elif("orange" in colour):
-    case = 3
-elif("white" in colour):
-    case = 4
-elif("black" in colour):
-    case = 5
-elif("red" in colour):
-    case = 6
-else:
-    case = 7
-        
-match case:
-    case 1:
-        print("Mondat")
-    case 2:
+# Extracting color from the sentence
+words = user_input.split()
+color = next((word for word in words if word in ["yellow", "blue", "orange", "white", "black", "red"]), None)
+
+match color:
+    case "yellow":
+        print("Monday")
+    case "blue":
         print("Tuesday")
-    case 3:
+    case "orange":
         print("Wednesday")
-    case 4:
+    case "white":
         print("Thursday")
-    case 5:
+    case "black":
         print("Friday")
-    case 6:
+    case "red":
         print("Saturday")
-    case 7:
-        print("Sunday")
-
-print()
+    case _:
+        print("Sunday (or color not recognized)")
